@@ -1,0 +1,45 @@
+<div class="row" ng-controller="MovieEditCtrl as mectrl">
+  <h4>Edit the Details of an Existing Movie in the Database</h4>
+  <form name="editMovieForm" ng-submit="meCtrl.editMovie(mectrl.code)">
+    <div class="row">
+      <div class="input-field col s12">
+        Select Movie: <br />
+        <select ng-model="selectMovie" ng-change="mectrl.setCode(selectMovie)">
+          <option value="" disabled selected>Select a movie...</option>
+          <option ng-repeat="codeMovie in mectrl.codeMovies">{{codeMovie}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Code: <br />
+        <input ng-model="mectrl.edit.code" type="text" required disabled>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Title: <br />
+        <input ng-model="mectrl.edit.title" type="text" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Director: <br />
+        <input ng-model="mectrl.edit.director" type="text" class="validate">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Genre: <br />
+        <input ng-model="mectrl.edit.genre" type="text" class="validate">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Year Released: <br />
+        <input ng-model="mectrl.edit.yearReleased" type="text" class="validate">
+      </div>
+    </div>
+    <input type="submit" value="edit" />
+  </form>
+</div>
