@@ -1,0 +1,15 @@
+<div class="row" ng-controller="MovieRemoveCtrl as mrctrl">
+  <h4>Remove an Existing Movie from the Database</h4>
+  <form name="removeMovieForm" ng-submit="mrctrl.removeMovie(mrctrl.code)">
+    <div class="row">
+      <div class="input-field col s12">
+        Select Movie: <br />
+        <select ng-model="selectMovie" ng-change="mrctrl.setCode(selectMovie)">
+          <option value="" disabled selected>Select a movie...</option>
+          <option ng-repeat="codeMovie in mrctrl.codeMovies">{{codeMovie}}</option>
+        </select>
+      </div>
+    </div>
+    <input type="submit" value="remove" />
+  </form>
+</div>
