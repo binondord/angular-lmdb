@@ -1,0 +1,36 @@
+<div class="row" ng-controller="MovieAddCtrl as mactrl">
+  <h4>Add a new Movie to the Database</h4>
+  <form name="addMovieForm" ng-submit="mactrl.addMovie()">
+    <div class="row">
+      <div class="input-field col s12">
+        Code: <br />
+        <input ng-model="mactrl.add.code"  type="text" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Title: <br />
+        <input ng-model="mactrl.add.title" type="text" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Director: <br />
+        <input ng-model="mactrl.add.director" value="" type="text">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Genre: <br />
+        <input ng-model="mactrl.add.genre" value="" type="text">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        Year Released: <br />
+        <input ng-model="mactrl.add.yearReleased" value="" type="text">
+      </div>
+    </div>
+    <input type="submit" value="add" />
+  </form>
+</div>
