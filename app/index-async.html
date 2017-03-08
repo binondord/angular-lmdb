@@ -45,14 +45,23 @@
   <link rel="stylesheet" href="app.css">
 </head>
 <body ng-cloak>
-  <ul class="menu">
-    <li><a href="#!/view1">view1</a></li>
-    <li><a href="#!/view2">view2</a></li>
-  </ul>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <!-- side menu -->
+        <h4>Actions</h4>
+        <ul class="collection">
+          <li><a href="#!/add">add movie</a></li>
+          <li><a href="#!/list">list movies</a></li>
+          <li><a href="#!/edit">edit movie</a></li>
+          <li><a href="#!/remove">remove movie</a></li>
+        </ul>
+      </div>
+      <div ng-view></div>
+    </div>
+  </div>
 
-  <div ng-view></div>
-
-  <div>Angular seed app: v<span app-version></span></div>
+  <!--<div>Angular seed app: v<span app-version></span></div>-->
 
 </body>
 </html>

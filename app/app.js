@@ -1,14 +1,19 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('lmdb', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
-  $locationProvider.hashPrefix('!');
+  'lmdb.movieAdd',
+  'lmdb.movieList',
+  'lmdb.movieEdit',
+  'lmdb.movieRemove'
+//  'lmdb.version'
+])
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+.config(['$locationProvider', '$routeProvider', 
+  function($locationProvider, $routeProvider) {
+    $locationProvider.hashPrefix('!');
+
+    $routeProvider.otherwise({redirectTo: '/list'});
+  }
+]);
