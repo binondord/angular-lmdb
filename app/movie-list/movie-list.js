@@ -5,13 +5,9 @@ angular.module('lmdb.movieList', [
   'core.movie'
 ])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/list', {
-    templateUrl: 'movie-list/movie-list.html',
-    controller: 'MovieListCtrl'
-  });
-}])
 
+
+/*
 .controller('MovieListCtrl', ['Movie', '$rootScope', function(Movie, $rootScope) {
   var vm = this;
   var i;
@@ -46,21 +42,42 @@ angular.module('lmdb.movieList', [
     });
   };
 
+
 }]);
 
-/*
-.controller('MovieListCtrl', ['$http', '$rootScope', function($http, $rootScope) {
+*/
+.controller('MovieListCtrl', function($http, $rootScope, $routeParams, $q) {
   var vm = this;
+  //var vm = $scope;
 
-  $http.get('http://192.168.10.10:3000/list').then(function(response) {
-    vm.movies = response.data;
-    console.log(vm.movies);
-  });
+  vm.name = 'MovieListCtrl';
+  vm.params = $routeParams;
+
+  vm.movies = $rootScope.sample;
+
+  
+
+
+
+  
 
   $rootScope.$on('MovieAddCtrl:addMovie', function(event, args){
-    console.log(vm.movies);
+    console.log('args : event',vm.movies);
+    /*
+    for(var i in vm.movies){
+      console.log('data --- i: ', vm.movies[i]);
+    }*/
+
+    console.log('------------------args------------', args);
+
     vm.movies.push(args);
   });
+
+
+  console.log('rootScope.sample ', $rootScope.sample);
   
-}]);
-*/  
+
+  
+
+});
+/**/  
