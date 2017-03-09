@@ -1,10 +1,10 @@
 <div class="row" ng-controller="MovieEditCtrl as mectrl">
   <h4>Edit the Details of an Existing Movie in the Database</h4>
-  <form name="editMovieForm" ng-submit="meCtrl.editMovie(mectrl.code)">
+  <form name="editMovieForm" ng-submit="mectrl.editMovie()">
     <div class="row">
       <div class="input-field col s12">
         Select Movie: <br />
-        <select ng-model="selectMovie" ng-change="mectrl.setCode(selectMovie)">
+        <select ng-model="selectMovie" ng-change="mectrl.populate(selectMovie)">
           <option value="" disabled selected>Select a movie...</option>
           <option ng-repeat="codeMovie in mectrl.codeMovies">{{codeMovie}}</option>
         </select>

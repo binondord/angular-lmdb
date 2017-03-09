@@ -1,16 +1,16 @@
 'use strict';
 
 angular.module('lmdb.movieRemove', [
-  'ngRoute',
+  // 'ngRoute',
   'core.movie'
 ])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/remove', {
-    templateUrl: 'movie-remove/movie-remove.html',
-    controller: 'MovieRemoveCtrl'
-  });
-}])
+// .config(['$routeProvider', function($routeProvider) {
+//   $routeProvider.when('/remove', {
+//     templateUrl: 'movie-remove/movie-remove.html',
+//     controller: 'MovieRemoveCtrl'
+//   });
+// }])
 
 .controller('MovieRemoveCtrl', ['Movie', function(Movie) {
   var vm = this;
